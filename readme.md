@@ -1,6 +1,6 @@
 ## Under maintenance Website Template
 
-Demo can be found [here](https://coming-soon.labskenya.com)
+Demo can be found [here](https://maintenance.ghulam.my.id)
 #### Quick setup
 - Clone the repo 
 ```
