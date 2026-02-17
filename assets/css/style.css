@@ -1,0 +1,264 @@
+:root {
+  --primary-gradient: linear-gradient(
+    135deg,
+    #ff9a9e 0%,
+    #fecfef 99%,
+    #fecfef 100%
+  );
+  --secondary-gradient: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --text-color: #555;
+  --heading-color: #333;
+  --shadow-soft: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #fdfbfb;
+}
+
+/* Background Animated Shapes */
+.background-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.7;
+  animation: float 20s infinite ease-in-out;
+}
+
+.shape-1 {
+  width: 400px;
+  height: 400px;
+  background: #ff9a9e;
+  top: -100px;
+  left: -100px;
+}
+
+.shape-2 {
+  width: 300px;
+  height: 300px;
+  background: #a1c4fd;
+  bottom: -50px;
+  right: -50px;
+  animation-delay: -5s;
+}
+
+.shape-3 {
+  width: 200px;
+  height: 200px;
+  background: #c2e9fb;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.4;
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, -30px);
+  }
+}
+
+/* Glass Card */
+.glass-container {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 30px;
+  padding: 3rem;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.glass-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Icons Animation */
+.illustration {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.floating-icon {
+  animation: bounce 3s infinite ease-in-out;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+.delay-2 {
+  animation-delay: 1s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Typography */
+h1 {
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+/* Progress Bar */
+.progress-area {
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.progress-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 60%;
+  background: var(--primary-gradient);
+  border-radius: 10px;
+  animation: loading 2s infinite ease-in-out;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+/* Buttons */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-social {
+  background: rgba(255, 255, 255, 0.6);
+  color: #555;
+  border: 1px solid transparent;
+}
+
+.btn-social:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary {
+  background: var(--primary-gradient);
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 154, 158, 0.6);
+}
+
+/* Entrance Animations */
+.bounce-in {
+  animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+}
+.fade-in {
+  animation: fadeIn 1s ease-out both 0.3s;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
